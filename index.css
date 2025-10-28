@@ -1,0 +1,123 @@
+/* Root & Typography */
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #333;
+  background-color: #f9f9f9;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Links */
+a {
+  color: #4caf50;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #388e3c;
+}
+
+/* Body */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: #f0f4f8;
+}
+
+/* Headings */
+h1 {
+  font-size: 2.8rem;
+  margin: 0.5em 0;
+  color: #2c3e50;
+}
+
+h2 {
+  font-size: 2rem;
+  color: white;
+}
+
+/* Buttons */
+button {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1.4rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+button:focus {
+  outline: 3px solid #81c784;
+  outline-offset: 2px;
+}
+
+/* Container */
+#root {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Cards */
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 1rem 0;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* Utility */
+.text-muted {
+  color: #777;
+  font-size: 1.4rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  button {
+    font-size: 1.2rem;
+    padding: 0.6rem 1.2rem;
+  }
+}

@@ -1,0 +1,60 @@
+.about-container {
+  max-width: 800px;
+  margin: 4rem auto;
+  text-align: center;
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.about-container h1 {
+  font-size: 2.2rem;
+  color: #16a34a;
+  margin-bottom: 1rem;
+}
+
+.about-description {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.about-features {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background: #f7fafc;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  width: 180px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.feature-card:hover {
+  background: #e8f5e9;
+  transform: translateY(-5px);
+}
+
+.feature-card span {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.about-footer {
+  margin-top: 2rem;
+  color: #777;
+  font-size: 0.9rem;
+}
