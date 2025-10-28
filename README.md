@@ -1,25 +1,25 @@
 ## Frontend Routes
 
-| Route | Description |
-|-------|-------------|
-| / | Home Page |
-| /login | Login |
-| /signup | Signup |
-| /expenses | List all expenses |
-| /expenses/:id | Expense details |
-| /expenses/new | Add new expense |
-| /expenses/edit/:id | Edit expense |
-| /expenses/confirm_delete/:id | Delete expense |
-| /categories | List all categories |
-| /categories/:id | Category details |
-| /categories/new | Add new category |
-| /categories/edit/:id | Edit category |
-| /categories/confirm_delete/:id | Delete category |
-| /payment-methods | List payment methods |
-| /payment-methods/:id | Payment method details |
-| /payment-methods/new | Add payment method |
-| /payment-methods/edit/:id | Edit payment method |
-| /payment-methods/confirm_delete/:id | Delete payment method |
-| /profile | User profile |
-| /profile/edit | Edit profile |
-| /about | About page |
+| Route | Component | Description |
+|-------|-----------|-------------|
+| / | HomePage.jsx | Home Page |
+| /login | Login.jsx | Login |
+| /signup | Signup.jsx | Signup |
+| /expenses | ExpensesList.jsx | List all expenses |
+| /expenses/:id | ExpenseDetails.jsx | Expense details |
+| /expenses/new | ExpenseForm.jsx | Add new expense |
+| /expenses/edit/:id | ExpenseForm.jsx | Edit expense |
+| /expenses/confirm_delete/:id | ExpenseDelete.jsx | Delete expense |
+| /categories | CategoriesList.jsx | List all categories |
+| /categories/:id | CategoryDetails.jsx | Category details |
+| /categories/new | CategoryForm.jsx | Add new category |
+| /categories/edit/:id | CategoryForm.jsx | Edit category |
+| /categories/confirm_delete/:id | CategoryDelete.jsx | Delete category |
+| /payment-methods | PaymentMethodsList.jsx | List payment methods |
+| /payment-methods/:id | PaymentMethodDetails.jsx | Payment method details |
+| /payment-methods/new | PaymentMethodForm.jsx | Add payment method |
+| /payment-methods/edit/:id | PaymentMethodForm.jsx | Edit payment method |
+| /payment-methods/confirm_delete/:id | PaymentMethodDelete.jsx | Delete payment method |
+| /profile | Profile.jsx | User profile |
+| /profile/edit | ProfileEdit.jsx | Edit profile |
+| /about | About.jsx | About page |
