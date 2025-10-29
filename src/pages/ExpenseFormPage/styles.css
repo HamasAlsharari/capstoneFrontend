@@ -1,0 +1,86 @@
+.expense-form-page {
+  max-width: 420px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f2f4f7;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+.expense-form-page h1 {
+  text-align: center;
+  color: #2e7d32;
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+}
+
+.expense-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.expense-form-container .form-group {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #cfd8dc;
+}
+
+.expense-form-container label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2e7d32;
+  margin-bottom: 6px;
+}
+
+.expense-form-container input,
+.expense-form-container textarea {
+  padding: 8px 10px;
+  font-size: 13px;
+  border: 1px solid #b0bec5;
+  border-radius: 6px;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.expense-form-container textarea {
+  resize: vertical;
+  min-height: 60px;
+  font-family: "Courier New", monospace;
+  color: #2e7d32;
+}
+
+.expense-form-container button {
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.expense-form-container button:hover {
+  background-color: #388e3c;
+}
+
+.btn.cancel {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: #95a5a6;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.btn.cancel:hover {
+  background-color: #7f8c8d;
+}

@@ -4,11 +4,7 @@ import * as expenseAPI from "../../utilities/expense-api";
 import "./styles.css";
 
 export default function ExpenseListPage() {
-  const [expenses, setExpenses] = useState([
-    { id: 1, title: "Groceries", amount: 120, category: "Food" },
-    { id: 2, title: "Internet Bill", amount: 60, category: "Utilities" },
-    { id: 3, title: "Gym Membership", amount: 40, category: "Health" },
-  ]);
+  const [expenses, setExpenses] = useState([]);
 
   useEffect(() => {
     async function getExpenses() {
@@ -19,7 +15,7 @@ export default function ExpenseListPage() {
         console.log(err);
       }
     }
-    if (expenses.length === 0) getExpenses();
+    getExpenses();
   }, []);
 
   const displayExpenses = expenses.map(exp => (

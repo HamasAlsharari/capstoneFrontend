@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import * as expenseAPI from "../../utilities/expense-api";
 import "./styles.css";
 
@@ -24,14 +24,19 @@ export default function ExpenseDetailPage() {
   return (
     <div className="expense-detail-page">
       <header className="page-header">
-        <h1>Expense Detail</h1>
+        <h1>💰Expense Detail</h1>
       </header>
 
       <div className="expense-detail-card">
         <h2>{expense.title}</h2>
-        <p><strong>Category:</strong> {expense.category}</p>
+        <p><strong>Date:</strong> {expense.date}</p>
         <p><strong>Amount:</strong> ${expense.amount}</p>
         <p><strong>Description:</strong> {expense.description || "No description"}</p>
+
+        <div className="expense-actions">
+          <Link to={`/expenses/edit/${expense.id}`} className="btn edit">Edit</Link>
+          <Link to={`/expenses/confirm_delete/${expense.id}`} className="btn danger">Delete</Link>
+        </div>
       </div>
     </div>
   );

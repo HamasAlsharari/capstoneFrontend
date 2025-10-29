@@ -2,6 +2,17 @@
   max-width: 600px;
   margin: 3rem auto;
   padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.expense-detail-page .page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.expense-detail-page .page-header h1 {
+  font-size: 1.8rem;
+  color: #2c3e50;
 }
 
 .expense-detail-card {
@@ -22,4 +33,39 @@
   font-size: 1rem;
   color: #555;
   margin: 0.5rem 0;
+}
+
+.expense-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.btn.edit {
+  background-color: #16a34a;
+}
+
+.btn.edit:hover {
+  background-color: #138d38;
+}
+
+.btn.danger {
+  background-color: #e74c3c;
+}
+
+.btn.danger:hover {
+  background-color: #c0392b;
 }
