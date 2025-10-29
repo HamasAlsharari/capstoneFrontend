@@ -9,7 +9,7 @@
 | /expenses/:id | ExpenseDetails.jsx | Expense details |
 | /expenses/new | ExpenseForm.jsx | Add new expense |
 | /expenses/edit/:id | ExpenseForm.jsx | Edit expense |
-| /expenses/confirm_delete/:id | ExpenseDelete.jsx | Delete expense |
+| /expenses/confirm_delete/:id | ExpenseForm.jsx | Delete expense |
 | /categories | CategoriesList.jsx | List all categories |
 | /categories/:id | CategoryDetails.jsx | Category details |
 | /categories/new | CategoryForm.jsx | Add new category |
