@@ -1,0 +1,25 @@
+.expense-card {
+  width: 220px;
+  padding: 1rem;
+  border-radius: 12px;
+  background: #f7fafc;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.expense-card:hover {
+  transform: translateY(-5px);
+}
+
+.expense-card h2 {
+  font-size: 1.2rem;
+  color: #16a34a;
+  margin-bottom: 0.5rem;
+}
+
+.expense-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0.3rem 0;
+}

@@ -1,0 +1,27 @@
+.expenses-page {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  color: #16a34a;
+}
+
+.page-header p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.expenses-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
