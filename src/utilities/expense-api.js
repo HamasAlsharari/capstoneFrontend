@@ -21,3 +21,7 @@ export async function update(formData, expenseId) {
 export async function deleteExpense(expenseId) {
   return sendRequest(`${url}${expenseId}/`, "DELETE");
 }
+
+export async function addCategoryToExpense(expenseId, categoryId) {
+  return sendRequest(`/expenses/${expenseId}/add-category/${categoryId}/`, "POST");
+}

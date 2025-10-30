@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import ExpenseCard from "../../components/ExpenseCard";
 import * as expenseAPI from "../../utilities/expense-api";
 import "./styles.css";
@@ -27,6 +28,7 @@ export default function ExpenseListPage() {
       <header className="page-header">
         <h1>💸 Your Expenses</h1>
         <p>Track all your expenses and manage your budget effectively.</p>
+        <Link to="/expenses/new" className="add-btn">+ Add Expense</Link>
       </header>
 
       <section className="expenses-container">

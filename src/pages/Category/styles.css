@@ -1,0 +1,154 @@
+.category-form-page {
+  max-width: 480px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f2f4f7;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+.category-form-page h1 {
+  text-align: center;
+  color: #2e7d32;
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+}
+
+.category-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.category-form-container .form-group {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #cfd8dc;
+}
+
+.category-form-container label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2e7d32;
+  margin-bottom: 6px;
+}
+
+.category-form-container input {
+  padding: 8px 10px;
+  font-size: 13px;
+  border: 1px solid #b0bec5;
+  border-radius: 6px;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.category-form-container button {
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.category-form-container button:hover {
+  background-color: #388e3c;
+}
+
+.btn.add-category {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: #2e7d32;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.btn.add-category:hover {
+  background-color: #388e3c;
+}
+
+.btn.cancel {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: #95a5a6;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.btn.cancel:hover {
+  background-color: #7f8c8d;
+}
+
+.category-detail-card, .category-index-card {
+  width: 240px;
+  margin: 15px;
+  padding: 15px;
+  border: 2px solid #2e7d32;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background-color: #f9fafb;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.category-index-card-container {
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category-detail-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.category-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.category-actions .btn.edit {
+  background-color: #16a34a;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+}
+
+.category-actions .btn.edit:hover {
+  background-color: #138d38;
+}
+
+.category-actions .btn.delete-btn {
+  background-color: #e74c3c;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.category-actions .btn.delete-btn:hover {
+  background-color: #c0392b;
+}

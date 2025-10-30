@@ -69,3 +69,57 @@
 .btn.danger:hover {
   background-color: #c0392b;
 }
+
+/* Categories & Payment Methods Sections */
+.expense-categories, .expense-payments {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.expense-categories h3, .expense-payments h3 {
+  color: #1e40af;
+  margin-bottom: 0.5rem;
+}
+
+.expense-categories ul, .expense-payments ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.expense-categories li, .expense-payments li {
+  background-color: #f2f4f7;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #cfd8dc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-category-form, .add-payment-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.add-category-form select, .add-payment-form select {
+  flex: 1;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #b0bec5;
+}
+
+.add-category-form button, .add-payment-form button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  background-color: #16a34a;
+  color: white;
+  cursor: pointer;
+}
+
+.add-category-form button:hover, .add-payment-form button:hover {
+  background-color: #138d38;
+}
