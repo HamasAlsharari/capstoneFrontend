@@ -1,0 +1,49 @@
+.profile-form-page {
+  max-width: 450px;
+  margin: 80px auto;
+  padding: 30px 40px;
+  background-color: #fff;
+  border: 2px solid #2e7d32;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.profile-form-page h2 {
+  color: #2e7d32;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.profile-form .form-group label {
+  font-weight: 600;
+  color: #333;
+  text-align: left;
+}
+
+.profile-form .form-group input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1.5px solid #ccc;
+}
+
+.btn.submit-btn {
+  background-color: #2e7d32;
+  color: #fff;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn.submit-btn:hover {
+  background-color: #388e3c;
+}

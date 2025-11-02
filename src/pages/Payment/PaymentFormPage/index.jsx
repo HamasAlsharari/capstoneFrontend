@@ -38,7 +38,7 @@ export default function PaymentFormPage({ createPaymentMethod, editPaymentMethod
         ? await paymentAPI.updatePaymentMethod(currPayment.id, formData)
         : await paymentAPI.createPaymentMethod(formData);
       setFormData(initialState);
-      navigate(`/payment-methods/${newPayment.id}`);
+      navigate("/payment-methods");
     } catch (err) {
       console.log(err);
     }

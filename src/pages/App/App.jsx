@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Routes, Route, Link, Navigate, useLocation } from "react-router-dom";
 import HomePage from "../HomePage";
 import AboutPage from "../AboutPage";
@@ -10,9 +11,17 @@ import CategoryFormPage from "../Category/CategoryFormPage";
 import PaymentListPage from "../Payment/PaymentListPage";
 import PaymentDetailPage from "../Payment/PaymentDetailPage";
 import PaymentFormPage from "../Payment/PaymentFormPage";
+import Profile from "../Profile";
+import ProfileForm from "../ProfileForm";
 import "./App.css";
 
 export default function App() {
+  const [user, setUser] = useState({
+    id: 1,
+    username: "User",
+    profile: null
+  });
+
   const location = useLocation();
 
   const mainCSS = location.pathname.includes("/about")
@@ -23,6 +32,8 @@ export default function App() {
     ? "categories"
     : location.pathname.includes("/payment-methods")
     ? "payment-methods"
+    : location.pathname.includes("/profile")
+    ? "profile"
     : "home";
 
   return (
@@ -32,6 +43,7 @@ export default function App() {
         <nav>
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
+          <Link to="/profile">Profile</Link>
           <Link to="/expenses">Expenses</Link>
           <Link to="/categories">Categories</Link>
           <Link to="/payment-methods">Payment Methods</Link>
@@ -61,6 +73,9 @@ export default function App() {
           <Route path="/payment-methods/new" element={<PaymentFormPage createPaymentMethod={true} />} />
           <Route path="/payment-methods/edit/:id" element={<PaymentFormPage editPaymentMethod={true} />} />
           <Route path="/payment-methods/confirm_delete/:id" element={<PaymentFormPage deletePaymentMethod={true} />} />
+
+          <Route path="/profile" element={<Profile user={user} setUser={setUser} />} />
+          <Route path="/profile/edit" element={<ProfileForm user={user} setUser={setUser} editProfile={true} />} />
 
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
