@@ -1,5 +1,7 @@
-import { useState } from "react";
-import { Routes, Route, Link, Navigate, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { getUser } from "../../utilities/users-api";
+import Navbar from "../../components/Navbar/Navbar";
 import HomePage from "../HomePage";
 import AboutPage from "../AboutPage";
 import ExpenseListPage from "../ExpenseListPage";
@@ -13,69 +15,77 @@ import PaymentDetailPage from "../Payment/PaymentDetailPage";
 import PaymentFormPage from "../Payment/PaymentFormPage";
 import Profile from "../Profile";
 import ProfileForm from "../ProfileForm";
+import LoginPage from "../LoginPage";
+import SignUpPage from "../SignUpPage";
 import "./App.css";
 
 export default function App() {
-  const [user, setUser] = useState({
-    id: 1,
-    username: "User",
-    profile: null
-  });
-
+  const [user, setUser] = useState(null);
   const location = useLocation();
+
+  useEffect(() => {
+    async function checkUser() {
+      const foundUser = await getUser();
+      setUser(foundUser);
+    }
+    checkUser();
+  }, []);
 
   const mainCSS = location.pathname.includes("/about")
     ? "about"
     : location.pathname.includes("/expenses")
-    ? "expenses"
-    : location.pathname.includes("/categories")
-    ? "categories"
-    : location.pathname.includes("/payment-methods")
-    ? "payment-methods"
-    : location.pathname.includes("/profile")
-    ? "profile"
-    : "home";
+      ? "expenses"
+      : location.pathname.includes("/categories")
+        ? "categories"
+        : location.pathname.includes("/payment-methods")
+          ? "payment-methods"
+          : location.pathname.includes("/profile")
+            ? "profile"
+            : "home";
 
   return (
     <div className="app-container">
-      <header className="app-header">
-        <h2 className="logo">💸 ExpenseTracker</h2>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/profile">Profile</Link>
-          <Link to="/expenses">Expenses</Link>
-          <Link to="/categories">Categories</Link>
-          <Link to="/payment-methods">Payment Methods</Link>
-        </nav>
-      </header>
+      <Navbar user={user} setUser={setUser} />
 
       <main className={mainCSS}>
         <Routes>
-
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
 
-          <Route path="/expenses" element={<ExpenseListPage />} />
-          <Route path="/expenses/:id" element={<ExpenseDetailPage />} />
-          <Route path="/expenses/new" element={<ExpenseFormPage createExpense={true} />} />
-          <Route path="/expenses/edit/:id" element={<ExpenseFormPage editExpense={true} />} />
-          <Route path="/expenses/confirm_delete/:id" element={<ExpenseFormPage deleteExpense={true} />} />
+          <Route path="/login" element={<LoginPage setUser={setUser} />} />
+          <Route path="/signup" element={<SignUpPage />} />
 
-          <Route path="/categories" element={<CategoryListPage />} />
-          <Route path="/categories/:id" element={<CategoryDetailPage />} />
-          <Route path="/categories/new" element={<CategoryFormPage createCategory={true} />} />
-          <Route path="/categories/edit/:id" element={<CategoryFormPage editCategory={true} />} />
-          <Route path="/categories/confirm_delete/:id" element={<CategoryFormPage deleteCategory={true} />} />
+          {user ? (
+            <>
+              <Route path="/profile" element={<Profile user={user} setUser={setUser} />} />
+              <Route path="/profile/edit" element={<ProfileForm user={user} setUser={setUser} editProfile={true} />} />
 
-          <Route path="/payment-methods" element={<PaymentListPage />} />
-          <Route path="/payment-methods/:id" element={<PaymentDetailPage />} />
-          <Route path="/payment-methods/new" element={<PaymentFormPage createPaymentMethod={true} />} />
-          <Route path="/payment-methods/edit/:id" element={<PaymentFormPage editPaymentMethod={true} />} />
-          <Route path="/payment-methods/confirm_delete/:id" element={<PaymentFormPage deletePaymentMethod={true} />} />
+              <Route path="/expenses" element={<ExpenseListPage />} />
+              <Route path="/expenses/:id" element={<ExpenseDetailPage />} />
+              <Route path="/expenses/new" element={<ExpenseFormPage createExpense={true} user={user} />} />
+              <Route path="/expenses/edit/:id" element={<ExpenseFormPage editExpense={true} user={user} />} />
+              <Route path="/expenses/confirm_delete/:id" element={<ExpenseFormPage deleteExpense={true} />} />
 
-          <Route path="/profile" element={<Profile user={user} setUser={setUser} />} />
-          <Route path="/profile/edit" element={<ProfileForm user={user} setUser={setUser} editProfile={true} />} />
+              <Route path="/categories" element={<CategoryListPage />} />
+              <Route path="/categories/:id" element={<CategoryDetailPage />} />
+              <Route path="/categories/new" element={<CategoryFormPage createCategory={true} />} />
+              <Route path="/categories/edit/:id" element={<CategoryFormPage editCategory={true} />} />
+              <Route path="/categories/confirm_delete/:id" element={<CategoryFormPage deleteCategory={true} />} />
+
+              <Route path="/payment-methods" element={<PaymentListPage />} />
+              <Route path="/payment-methods/:id" element={<PaymentDetailPage />} />
+              <Route path="/payment-methods/new" element={<PaymentFormPage createPaymentMethod={true} />} />
+              <Route path="/payment-methods/edit/:id" element={<PaymentFormPage editPaymentMethod={true} />} />
+              <Route path="/payment-methods/confirm_delete/:id" element={<PaymentFormPage deletePaymentMethod={true} />} />
+            </>
+          ) : (
+            <>
+              <Route path="/profile" element={<Navigate to="/login" />} />
+              <Route path="/expenses/*" element={<Navigate to="/login" />} />
+              <Route path="/categories/*" element={<Navigate to="/login" />} />
+              <Route path="/payment-methods/*" element={<Navigate to="/login" />} />
+            </>
+          )}
 
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

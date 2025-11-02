@@ -3,8 +3,8 @@ import { useNavigate, useParams, Link } from "react-router-dom";
 import * as expenseAPI from "../../utilities/expense-api";
 import "./styles.css";
 
-export default function ExpenseFormPage({ createExpense, editExpense, deleteExpense }) {
-  const initialState = { title: "", amount: "", category: "", description: "", date: "" };
+export default function ExpenseFormPage({ createExpense, editExpense, deleteExpense, user }) {
+  const initialState = { title: "", amount: "", description: "", date: "" };
   const [formData, setFormData] = useState(initialState);
   const [currExpense, setCurrExpense] = useState(null);
   const { id } = useParams();
@@ -15,7 +15,12 @@ export default function ExpenseFormPage({ createExpense, editExpense, deleteExpe
       try {
         const expense = await expenseAPI.show(id);
         setCurrExpense(expense);
-        setFormData(expense);
+        setFormData({
+          title: expense.title || "",
+          amount: expense.amount || "",
+          description: expense.description || "",
+          date: expense.date || ""
+        });
       } catch {
         setCurrExpense(null);
         setFormData(initialState);
@@ -31,10 +36,15 @@ export default function ExpenseFormPage({ createExpense, editExpense, deleteExpe
   async function handleSubmit(evt) {
     evt.preventDefault();
     try {
+      const dataToSend = {
+        ...formData,
+        user: user.id 
+      };
+
       if (editExpense) {
-        await expenseAPI.update(formData, currExpense.id);
+        await expenseAPI.update(dataToSend, currExpense.id);
       } else {
-        await expenseAPI.create(formData);
+        await expenseAPI.create(dataToSend);
       }
       setFormData(initialState);
       navigate("/expenses");
@@ -76,7 +86,7 @@ export default function ExpenseFormPage({ createExpense, editExpense, deleteExpe
         <input name="title" value={formData.title} onChange={handleChange} required />
 
         <label>Amount:</label>
-        <input name="amount" type="number" value={formData.amount} onChange={handleChange} required />
+        <input name="amount" type="number" step="0.01" value={formData.amount} onChange={handleChange} required />
 
         <label>Description:</label>
         <textarea name="description" value={formData.description} onChange={handleChange} />
