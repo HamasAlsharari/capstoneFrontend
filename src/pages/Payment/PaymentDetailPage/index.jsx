@@ -30,8 +30,8 @@ export default function PaymentDetailPage() {
         <p>Last Four: {payment.last_four}</p>
       </div>
       <div className="payment-actions">
-        <Link to={`/payment-methods/edit/${payment.id}`} className="btn warn">Edit</Link>
-        <Link to={`/payment-methods/confirm_delete/${payment.id}`} className="btn danger">Delete</Link>
+        <Link to={`/payment-methods/edit/${payment.id}`} className="btn edit-btn">Edit</Link>
+        <Link to={`/payment-methods/confirm_delete/${payment.id}`} className="btn delete-btn">Delete</Link>
       </div>
     </div>
   );

@@ -47,7 +47,7 @@ export default function PaymentFormPage({ createPaymentMethod, editPaymentMethod
   async function handleDelete(evt) {
     evt.preventDefault();
     try {
-      const response = await paymentAPI.deletePayment(currPayment.id);
+      const response = await paymentAPI.deletePaymentMethod(currPayment.id);
       if (response.success) navigate("/payment-methods");
     } catch (err) {
       console.log(err);
@@ -56,7 +56,7 @@ export default function PaymentFormPage({ createPaymentMethod, editPaymentMethod
 
   if (deletePaymentMethod && !currPayment) return <h1>Loading</h1>;
   if (deletePaymentMethod && currPayment) return (
-    <div className="payment-form-page">
+    <div className="delete-confirm-page">
       <h1>Delete Payment Method?</h1>
       <h2>Are you sure you want to delete {currPayment.name}?</h2>
       <form onSubmit={handleDelete}>
@@ -67,7 +67,7 @@ export default function PaymentFormPage({ createPaymentMethod, editPaymentMethod
   );
 
   return (
-    <div className="payment-form-page">
+    <div className="form-page">
       <h1>{editPaymentMethod ? `Edit ${currPayment?.name}`: "Add Payment Method"}</h1>
       <form className="payment-form-container" onSubmit={handleSubmit}>
         <div className="form-group">

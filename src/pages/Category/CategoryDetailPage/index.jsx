@@ -30,21 +30,6 @@ export default function CategoryDetailPage() {
                 <Link to={`/categories/edit/${category.id}`} className="btn edit-btn">Edit</Link>
                 <Link to={`/categories/confirm_delete/${category.id}`} className="btn delete-btn">Delete</Link>
             </div>
-
-            <div className="expenses-list">
-                <h2>Expenses Linked</h2>
-                {category.expenses && category.expenses.length > 0 ? (
-                    <ul>
-                        {category.expenses.map(exp => (
-                            <li key={exp.id}>
-                                <Link to={`/expenses/${exp.id}`}>{exp.title}</Link> - ${exp.amount}
-                            </li>
-                        ))}
-                    </ul>
-                ) : (
-                    <p className="text-muted">No linked expenses.</p>
-                )}
-            </div>
         </div>
     );
 }

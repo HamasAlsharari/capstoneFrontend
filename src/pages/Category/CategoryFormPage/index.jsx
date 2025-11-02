@@ -13,7 +13,7 @@ export default function CategoryFormPage({ createCategory, editCategory, deleteC
             async function fetchCategory() {
                 try {
                     const data = await categoryAPI.show(id);
-                    setFormData({ name: data.name, icon: data.icon || "", color: data.color || "#4caf50" });
+                    setFormData({ name: data.name, icon: data.icon || "", color: data.color?.startsWith("#") ? data.color : "#4caf50" });
                 } catch (err) {
                     console.log(err);
                 }
@@ -52,7 +52,7 @@ export default function CategoryFormPage({ createCategory, editCategory, deleteC
     }
 
     if (deleteCategory) return (
-        <div className="category-page page-container">
+        <div className="form-page">
             <h1>Delete Category?</h1>
             <p>Are you sure you want to delete "{formData.name}"?</p>
             <div className="category-actions">
@@ -63,7 +63,7 @@ export default function CategoryFormPage({ createCategory, editCategory, deleteC
     );
 
     return (
-        <div className="category-page page-container">
+        <div className="form-page">
             <h1>{editCategory ? "Edit Category" : "Add Category"}</h1>
             <form onSubmit={handleSubmit} className="category-form">
                 <div className="form-group">

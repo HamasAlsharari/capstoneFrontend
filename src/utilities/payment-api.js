@@ -6,7 +6,7 @@ export function listPaymentMethods() {
 }
 
 export function showPaymentMethod(id) {
-    return sendRequest(`${url}${id}`)
+    return sendRequest(`${url}${id}/`)
 }
 
 export function createPaymentMethod(formData) {
@@ -14,11 +14,11 @@ export function createPaymentMethod(formData) {
 }
 
 export function updatePaymentMethod(id, formData) {
-    return sendRequest(`${url}${id}`, "PUT", formData)
+    return sendRequest(`${url}${id}/`, "PUT", formData)
 }
 
 export function deletePaymentMethod(id) {
-    return sendRequest(`${url}${id}`, "DELETE")
+    return sendRequest(`${url}${id}/`, "DELETE")
 }
 
 export async function addPaymentMethodToExpense(expenseId, paymentMethodId) {
