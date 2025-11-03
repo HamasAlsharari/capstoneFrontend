@@ -35,7 +35,7 @@ export function logout() {
 
 export async function getUser() {
   try {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("accessToken")
     const refresh = localStorage.getItem("refresh");
     if (token && refresh) {
       const response = await sendRequest(`${url}/token/refresh/`, "POST", { refresh });
