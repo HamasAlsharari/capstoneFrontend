@@ -43,29 +43,50 @@ Without Docker (Optional)
 
 # Routing Table Frontend
 
+### Authentication & General Routes
 | Route | Component | Description |
 |-------|-----------|-------------|
 | / | HomePage.jsx | Home Page |
-| /login | Login.jsx | Login |
-| /signup | Signup.jsx | Signup |
+| /login | LoginPage.jsx | Login |
+| /signup | SignupPage.jsx | Signup |
+| /about | AboutPage.jsx | About page |
+
+
+### Expenses
+| Route | Component | Description |
+|-------|-----------|-------------|
 | /expenses | ExpensesList.jsx | List all expenses |
 | /expenses/:id | ExpenseDetails.jsx | Expense details |
 | /expenses/new | ExpenseForm.jsx | Add new expense |
 | /expenses/edit/:id | ExpenseForm.jsx | Edit expense |
 | /expenses/confirm_delete/:id | ExpenseForm.jsx | Delete expense |
+
+
+### Categories
+| Route | Component | Description |
+|-------|-----------|-------------|
 | /categories | CategoryList.jsx | List all categories |
 | /categories/:id | CategoryDetail.jsx | Category details |
 | /categories/new | CategoryForm.jsx | Add new category |
 | /categories/edit/:id | CategoryForm.jsx | Edit category |
 | /categories/confirm_delete/:id | CategoryForm.jsx | Delete category |
+
+
+### Payment Methods
+| Route | Component | Description |
+|-------|-----------|-------------|
 | /payment-methods | PaymentList.jsx | List payment methods |
 | /payment-methods/:id | PaymentDetail.jsx | Payment method details |
 | /payment-methods/new | PaymentForm.jsx | Add payment method |
 | /payment-methods/edit/:id | PaymentForm.jsx | Edit payment method |
 | /payment-methods/confirm_delete/:id | PaymentMethodForm.jsx | Delete payment method |
+
+
+### Profile
+| Route | Component | Description |
+|-------|-----------|-------------|
 | /profile | Profile.jsx | User profile |
 | /profile/edit | ProfileForm.jsx | Edit profile |
-| /about | About.jsx | About page |
 
 
 # IceBox Features / Future Features:
